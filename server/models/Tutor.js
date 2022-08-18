@@ -24,15 +24,10 @@ const tutorSchema = new Schema(
     bids: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Thought'
+        ref: 'Bids'
       }
     ],
-    friends: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'tutor'
-      }
-    ]
+   
   },
   {
     toJSON: {
