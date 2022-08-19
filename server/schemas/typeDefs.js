@@ -13,18 +13,18 @@ type Tutor {
     _id: ID
     username: String
     email: String
-    bids: [Bid]
+    bids: [Bids]
 }
 
 type Assignment {
     _id: ID
     description: String
-    askPrice: Int32Array
+    askPrice: String
     createdAt: String
     username: String
-    bids: [Bid]
+    bids: [Bids]
     subject: String
-    commentCount: Int
+    commentCount: String
     comments: [Comment]
 }
 
@@ -35,7 +35,7 @@ type Comment {
     username: String
 }
 
-type Bid {
+type Bids {
     _id: ID
     priceOffer: String
     username: String
@@ -43,22 +43,35 @@ type Bid {
     assignment: String
 }
 
+type Auth {
+    token: ID!
+    student: Student
+    tutor: Tutor
+}
+
 type Query {
-    me: User
-    users: [User]
-    user(username: String!): User
+    me_Student: Student
+    me_Tutor: Tutor 
+    Student(username: String!): Student
+    Tutor(username: String!): Tutor
     students: [Student]
     tutors: [Tutor]
+    assignments(username: String!): [Assignment]
+    assignment(_id: ID!): Assignment
+    bids(username: String!): [Bids]
+    bid(_id: ID!): Bids
     comments(username: String!): [Comment]
     comment(_id: ID!): Comment
 }
+
+
 
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addAssignment(assignmentText: String!): Assignment
     addComment(commentId: ID!, commentBody: String!): Assignment
-    addBid(bidId: ID!, bidBody: Int!): Bid
+    addBid(bidId: ID!, bidBody: String!): Bids
 }
 `;
 module.exports = typeDefs;
