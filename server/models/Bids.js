@@ -6,10 +6,9 @@ const dateFormat = require('../utils/dateFormat');
 const bidsSchema = new Schema(
 {
 priceOffer: {
-    type: String,
+    type: Int32Array,
     required: 'you need to add a bid amount',
-    minlength: 3,
-    maxlength: 10
+  
 },
 createdAt: {
     type: Date,

@@ -3,7 +3,7 @@ const {Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const assignmentSchema = new Schema({
-    name: 
+    username: 
       {
         type: String,
         required: true
@@ -14,7 +14,7 @@ const assignmentSchema = new Schema({
       required: true,
     },
     askPrice: {
-      type: String,
+      type: Int32Array,
       required:true
     },
     createdAt: {
@@ -23,7 +23,7 @@ const assignmentSchema = new Schema({
         get: timestamp => dateFormat(timestamp)
       },
 
-    studentname: {
+    username: {
       type: String,
       required: true,
     },

@@ -1,8 +1,8 @@
 const Assignment = require('./Assignment');
 const Bids = require('./Bids');
-const Client = require('./Client');
-const Subject = require('./Subject');
-const Tutor = require('./Tutor');
-const User = require('./User');
+const Student = require('./Student');
 
-module.exports = { Assignment, Bids, Client, Subject, Tutor, User };
+const Tutor = require('./Tutor');
+
+
+module.exports = { Assignment, Bids, Student,  Tutor, };
