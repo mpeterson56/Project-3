@@ -9,14 +9,14 @@
   "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
   "install": "cd server && npm i && cd ../client && npm i",
   "predeploy": "npm run build",
-"deploy": "gh-pages -d build" ,
+  "deploy": "gh-pages -d build",
   "build": "cd client && npm run build"
 },
 "keywords": [],
 "author": "",
 "license": "ISC",
 "devDependencies": {
-  "concurrently": "^5.1.0"
+"concurrently": "^5.1.0"
 }
 
 }
