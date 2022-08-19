@@ -4,6 +4,8 @@ const typeDefs = gql`
 
 type User {
     _id: ID
+    email: String
+    username: String
     student: Student @relation(name: "UserOnStudent")
     tutor: Tutor @relation(name: "UserOnTutor")
     userType: UserType
@@ -12,16 +14,12 @@ type User {
 type Student {
     _id: ID
     user: User @relation(name: "UserOnStudent")
-    username: String
-    email: String
     assignments: [Assignment]
 }
 
 type Tutor {
     _id: ID
     user: User @relation(name: "UserOnTutor")
-    username: String
-    email: String
     bids: [Bid]
 }
 
