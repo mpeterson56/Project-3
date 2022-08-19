@@ -43,13 +43,20 @@ type Bid {
     createdAtL: String
 }
 type Query {
+    me: User
+    users: [Student, Tutor]
+    user(username: String!): User
     students: [Student]
     tutors: [Tutor]
+    comments(username: String!): [Comment]
+    comment(_id: ID!): Comment
 }
 type Mutation {
     login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
     addAssignment(assignmentText: String!): Assignment
     addComment(commentId: ID!, commentBody: String!): Assignment
+    addBid(bidId: ID!, bidBody: Int!): Bid
 }
 `;
 module.exports = typeDefs;
