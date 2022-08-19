@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const tutorSchema = new Schema(
+const studentSchema = new Schema(
   {
     username: {
      
@@ -14,20 +14,22 @@ const tutorSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      match: [/^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/, 'Must match an email address format!']
+      match: [/^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/, 'Must match an email address!']
     },
     password: {
       type: String,
       required: true,
       minlength: 5
     },
-    bids: [
+    assignment: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Bids'
+        ref: 'Assignment'
       }
     ],
    
+
+
   },
   {
     toJSON: {
@@ -37,7 +39,7 @@ const tutorSchema = new Schema(
 );
 
 // set up pre-save middleware to create password
-tutorSchema.pre('save', async function(next) {
+studentSchema.pre('save', async function(next) {
   if (this.isNew || this.isModified('password')) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
@@ -47,12 +49,12 @@ tutorSchema.pre('save', async function(next) {
 });
 
 // compare the incoming password with the hashed password
-tutorSchema.methods.isCorrectPassword = async function(password) {
+studentSchema.methods.isCorrectPassword = async function(password) {
   return bcrypt.compare(password, this.password);
 };
 
 
 
-const Tutor = model('tutor', tutorSchema);
+const Student = model('Student', studentSchema);
 
-module.exports = Tutor;
+module.exports = Student;
