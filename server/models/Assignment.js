@@ -1,6 +1,7 @@
 const { Schema, model } = require("mongoose");
 //const bidsSchema = require('./Bids');
 const dateFormat = require("../utils/dateFormat");
+const commentSchema = require("../models/Comment");
 
 const assignmentSchema = new Schema(
   {
@@ -35,9 +36,10 @@ const assignmentSchema = new Schema(
     },
     comments: [commentSchema],
   },
+
   {
     toJSON: {
-      virtuals: true,
+      getters: true,
     },
   }
 );
