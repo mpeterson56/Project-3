@@ -1,10 +1,10 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-
-
 type User {
     _id: ID
+    email: String
+    username: String
     student: Student @relation(name: "UserOnStudent")
     tutor: Tutor @relation(name: "UserOnTutor")
     userType: UserType
@@ -12,15 +12,11 @@ type User {
 type Student {
     _id: ID
     user: User @relation(name: "UserOnStudent")
-    username: String
-    email: String
     assignments: [Assignment]
 }
 type Tutor {
     _id: ID
     user: User @relation(name: "UserOnTutor")
-    username: String
-    email: String
     bids: [Bid]
 }
 enum UserType {
@@ -47,17 +43,20 @@ type Bid {
     createdAtL: String
 }
 type Query {
+    me: User
+    users: [Student, Tutor]
+    user(username: String!): User
     students: [Student]
     tutors: [Tutor]
+    comments(username: String!): [Comment]
+    comment(_id: ID!): Comment
 }
 type Mutation {
-    login(email: String!, password: String!): auth
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
     addAssignment(assignmentText: String!): Assignment
     addComment(commentId: ID!, commentBody: String!): Assignment
+    addBid(bidId: ID!, bidBody: Int!): Bid
 }
-
-
-
-
 `;
 module.exports = typeDefs;
