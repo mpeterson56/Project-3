@@ -3,17 +3,17 @@ const { connect } = require('mongoose');
 const { Student, Tutor, Assignment, Bids } = require('../models');
 const { signToken } = require('../utils/auth');
 
-const resolvers = {
-    Query: {
-        user: async(parent, args, context) => {
-            if (context.userType) {
-                const studentData = await
-            }
-        }
-    }
+// const resolvers = {
+//     Query: {
+//         user: async(parent, args, context) => {
+//             if (context.userType) {
+//                 const studentData = await
+//             }
+//         }
+//     }
 
     
-};
+// };
 
 
 
