@@ -34,7 +34,8 @@ const assignmentSchema = new Schema({
 subject:{
     type: String,
     required: true
-}
+},
+comments: [commentModel]
 
 
     
