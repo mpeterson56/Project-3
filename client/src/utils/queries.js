@@ -14,6 +14,7 @@ query student($username: String!) {
             comments{
                 _id
                 username
+                tutorname
                 commentBody
             }
         }
@@ -25,11 +26,11 @@ export const QUERY_TUTOR = gql`
 query tutor($username: String!) {
     tutor(username: $username) {
         _id
-        username
+        tutorname
         email
         Bids {
             _id
-            username
+            tutorname
             priceOffer
             assignment
         }
@@ -51,12 +52,13 @@ export const QUERY_ME_STUDENT = gql`
                 comments{
                     _id
                     username
+                    tutorname
                     commentBody
                 }
                 bids {
                     _id
                     priceOffer
-                    username
+                    tutorname
                 }
             }
         }
@@ -67,14 +69,36 @@ export const QUERY_ME_TUTOR = gql`
     {
         me {
             _id
-            username
+            tutorname
             email
             bids {
                 _id
                 priceOffer
-                username
+                tutorname
                 assignment
             }
         }
     }
+`;
+
+export const QUERY_ASSIGNMENTS = gql`
+  query assignments($username: String) {
+    assignments(username: $username) {
+      _id
+      askPrice
+      username
+      bids {
+        _id
+        priceOffer
+        tutorname
+      }
+      commentCount
+      comments {
+        _id
+        username
+        tutorname
+        commentBody
+      }
+    }
+  }
 `;

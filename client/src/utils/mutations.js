@@ -47,3 +47,14 @@ mutation addTutor($username: String!, $password: String!, $email: String!) {
     }
 }
 `;
+
+export const ADD_ASSIGNMENT = gql`
+mutation addAssignment($description: String!, $askPrice: String!) {
+    addAssignment(description: $description, askPrice: $askPrice) {
+      _id
+      description
+      askPrice
+      username
+    }
+  }
+`
