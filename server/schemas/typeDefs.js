@@ -68,7 +68,8 @@ type Query {
 
 type Mutation {
     login(email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!): Auth
+    addStudent(username: String!, email: String!, password: String!): Auth
+    addTutor(username: String!, email: String!, password: String!): Auth
     addAssignment(assignmentText: String!): Assignment
     addComment(commentId: ID!, commentBody: String!): Assignment
     addBid(bidId: ID!, bidBody: String!): Bids

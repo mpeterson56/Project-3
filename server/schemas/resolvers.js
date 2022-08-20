@@ -67,7 +67,9 @@ const resolvers = {
 
     },
 
-    
+    Mutation: {
+        add
+    }
 
     
 };
