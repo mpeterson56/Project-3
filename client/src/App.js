@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React from 'react';
 import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -33,7 +33,6 @@ const client = new ApolloClient({
 
 
 function App() {
-  const [checked, setChecked] = useState(false);
 
   return (
     <ApolloProvider client={client}>
@@ -56,6 +55,14 @@ function App() {
               <Route
                 path='/tutorSignup'
                 element={<TutorSignup />}
+              />
+              <Route
+                path='/studentProfile'
+                element={<StudentProfile />}
+              />
+              <Route
+                path='/tutorProfile'
+                element={<TutorProfile />}
               />
             </Routes>
         </div>
