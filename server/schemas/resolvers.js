@@ -52,13 +52,13 @@ const resolvers = {
             .select('-__v -password')
             .populate('bids')
         },
-        tutor: async (parent, { username }) => {
-            return tutor.findOne({ username })
+        tutor: async (parent, { tutorname }) => {
+            return tutor.findOne({ tutorname })
             .select('-__v -password')
             .populate('bids')
         },
-        bids: async (parent, { username }) => {
-            const params = username ? { username } : {};
+        bids: async (parent, { tutorname }) => {
+            const params = tutorname ? { tutorname } : {};
             return Bids.find(params).sort({ createdAt: -1 });
         },
         bid: async (parent, { _id }) => {

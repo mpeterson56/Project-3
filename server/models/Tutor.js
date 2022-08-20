@@ -1,6 +1,7 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 const bidsSchema = require("../models/Bids");
+const commentSchema = require("../models/Comment");
 
 const tutorSchema = new Schema(
   {
