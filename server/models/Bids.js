@@ -1,5 +1,4 @@
-const { Schema, model } = require("mongoose");
-
+const { Schema } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
 const bidsSchema = new Schema({
@@ -12,23 +11,21 @@ const bidsSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
+
   tutorname: {
     type: String,
     required: true,
-  },
-  assignment: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Assignment",
-    },
-  ],
+  }
+
 },
+
 {
   toJSON: {
     getters: true,
   },
-});
+}
 
-const Bids = model("Bids", bidsSchema);
+);
 
-module.exports = Bids;
+
+module.exports = bidsSchema;

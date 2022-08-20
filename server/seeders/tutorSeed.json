@@ -1,0 +1,18 @@
+[
+    { 
+        "tutorname" : "james", 
+        "email" : "james@gmail.com", 
+        "password" : "password123" 
+    },
+    { 
+        "tutorname" : "tony", 
+        "email" : "tony@gmail.com", 
+        "password" : "password123" 
+    },
+    { 
+        "tutorname" : "sam", 
+        "email" : "sam@gmail.com", 
+        "password" : "password123" 
+    }
+   
+]

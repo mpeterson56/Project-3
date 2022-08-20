@@ -49,6 +49,7 @@ type Auth {
     tutor: Tutor
 }
 
+
 type Query {
     me_Student: Student
     me_Tutor: Tutor 
