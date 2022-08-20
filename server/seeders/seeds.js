@@ -16,8 +16,11 @@ db.once('open', async () => {
     // await Comment.deleteMany({});
     // await Bids.deleteMany({});
 
-    await Student.create(studentSeeds);
-    await Tutor.create(tutorSeeds);
+    await Student.insertMany(studentSeeds);
+    await Tutor.insertMany(tutorSeeds);
+
+    // await Student.create(studentSeeds);
+    // await Tutor.create(tutorSeeds);
 
     for (let i = 0; i < assignmentSeeds.length; i++) {
       const { _id, assignmentAuthor } = await Assignment.create(assignmentSeeds[i]);
