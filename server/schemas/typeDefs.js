@@ -6,7 +6,7 @@ type Student {
     _id: ID
     username: String
     email: String
-    assignment: [Assignment]
+    assignments: [Assignment]
 }
 
 type Tutor {
@@ -40,7 +40,7 @@ type Bids {
     priceOffer: String
     username: String
     createdAt: String
-    assignment: String
+    assignments: String
 }
 
 type Auth {
