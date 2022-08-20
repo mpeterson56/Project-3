@@ -7,6 +7,8 @@ import StudentLogin from './components/Student/Student-Login';
 import TutorLogin from './components/Tutor/Tutor-Login';
 import StudentSignup from './components/Student/Student-Signup';
 import TutorSignup from './components/Tutor/Tutor-Signup';
+import StudentProfile from './components/Student/Student-Profile';
+import TutorProfile from './components/Tutor/Tutor-Profile';
 
 
 const httpLink = createHttpLink({
@@ -35,16 +37,29 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-      <StudentSignup />
-      <TutorSignup />
-      <StudentLogin />
-      <TutorLogin />
-      <Routes>
-        
-      </Routes>
-
+        <div>
+            <Nav />
+            <Routes>
+              <Route
+                path='/studentLogin'
+                element={<StudentLogin />}
+              />
+              <Route
+                path='/studentSignup'
+                element={<StudentSignup />}
+              />
+              <Route
+                path='/tutorLogin'
+                element={<TutorLogin />}
+              />
+              <Route
+                path='/tutorSignup'
+                element={<TutorSignup />}
+              />
+            </Routes>
+        </div>
       </Router>
-    
+
     </ApolloProvider>
   );
 }

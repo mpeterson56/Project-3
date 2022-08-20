@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME_TUTOR } from '../utils/queries';
 import Auth from '../utils/auth';
 
-const StudentProfile = (props) => {
+const TutorProfile = (props) => {
     const { username: userParam } = useParams();
 
     const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME_TUTOR, {
@@ -52,4 +52,4 @@ const StudentProfile = (props) => {
     );
 };
 
-export default StudentProfile;
+export default TutorProfile;
