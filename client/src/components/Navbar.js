@@ -6,9 +6,8 @@ function Nav() {
     function showNavigation() {
         if (Auth.loggedIn()) {
           return (
-            <ul className="flex-row">
-              <li className="mx-1">
-                {/* this is not using the Link component to logout or user and then refresh the application to the start */}
+            <ul>
+              <li>
                 <a href="/" onClick={() => Auth.logout()}>
                   Logout
                 </a>
@@ -17,23 +16,23 @@ function Nav() {
           );
         } else {
           return (
-            <ul className="flex-row">
-              <li className="mx-1">
+            <ul>
+              <li>
                 <Link to="/studentSignup">
                   Student Signup
                 </Link>
               </li>
-              <li className="mx-1">
+              <li>
                 <Link to="/studentLogin">
                   Student Login
                 </Link>
               </li>
-              <li className="mx-1">
+              <li>
                 <Link to="/tutorSignup">
                   Tutor Signup
                 </Link>
               </li>
-              <li className="mx-1">
+              <li>
                 <Link to="/tutorLogin">
                   Tutor Login
                 </Link>
@@ -44,7 +43,7 @@ function Nav() {
       }
     
       return (
-        <header className="flex-row px-1">
+        <header>
           <h1>
             Tutor Coin
           </h1>
