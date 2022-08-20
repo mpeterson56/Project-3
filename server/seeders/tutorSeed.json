@@ -1,16 +1,16 @@
 [
     { 
-        "username" : "Tom", 
-        "email" : "tom@gmail.com", 
+        "tutorname" : "james", 
+        "email" : "james@gmail.com", 
         "password" : "password123" 
     },
     { 
-        "username" : "John", 
-        "email" : "john@gmail.com", 
+        "tutorname" : "tony", 
+        "email" : "tony@gmail.com", 
         "password" : "password123" 
     },
     { 
-        "username" : "Sam", 
+        "tutorname" : "sam", 
         "email" : "sam@gmail.com", 
         "password" : "password123" 
     }

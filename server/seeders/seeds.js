@@ -1,23 +1,31 @@
 // const faker = require('faker');
-const userSeeds = require('./userSeed.json');
-// const thoughtSeeds = require('./thoughtSeed.json');
+const studentSeeds = require('./studentSeed.json');
+const tutorSeeds = require('./tutorSeed.json');
+const assignmentSeeds = require('./assignmentSeed.json');
+// const bidsSeeds = require('./bidsSeed.json');
+// const commentSeeds = require('./commentSeed.json');
 const db = require('../config/connection');
-const { User } = require('../models');
+const { Student, Tutor, Assignment } = require('../models');
 
 db.once('open', async () => {
   try {
     // await Thought.deleteMany({});
-    await User.deleteMany({});
+    await Student.deleteMany({});
+    await Tutor.deleteMany({});
+    await Assignment.deleteMany({});
+    // await Comment.deleteMany({});
+    // await Bids.deleteMany({});
 
-    await User.create(userSeeds);
+    await Student.create(studentSeeds);
+    await Tutor.create(tutorSeeds);
 
-    for (let i = 0; i < thoughtSeeds.length; i++) {
-      const { _id, thoughtAuthor } = await Thought.create(thoughtSeeds[i]);
-      const user = await User.findOneAndUpdate(
-        { username: thoughtAuthor },
+    for (let i = 0; i < assignmentSeeds.length; i++) {
+      const { _id, assignmentAuthor } = await Assignment.create(assignmentSeeds[i]);
+      const student = await Student.findOneAndUpdate(
+        { username: assignmentAuthor },
         {
           $addToSet: {
-            thoughts: _id,
+            Assignment: _id,
           },
         }
       );
