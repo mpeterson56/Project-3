@@ -10,6 +10,7 @@ import TutorSignup from './components/Tutor/Tutor-Signup';
 import StudentProfile from './components/Student/Student-Profile';
 import TutorProfile from './components/Tutor/Tutor-Profile';
 import Nav from './components/Navbar';
+import Footer from './components/Footer';
 
 
 const httpLink = createHttpLink({
@@ -65,6 +66,7 @@ function App() {
                 element={<TutorProfile />}
               />
             </Routes>
+            <Footer />
         </div>
       </Router>
 
