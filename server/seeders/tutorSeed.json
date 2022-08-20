@@ -2,17 +2,24 @@
     { 
         "tutorname" : "james", 
         "email" : "james@gmail.com", 
-        "password" : "password123" 
+        "password" : "password123", 
+        "comments": [],
+        "bids": []
+
     },
     { 
         "tutorname" : "tony", 
         "email" : "tony@gmail.com", 
-        "password" : "password123" 
+        "password" : "password123",
+        "comments": [],
+        "bids": []
     },
     { 
         "tutorname" : "sam", 
         "email" : "sam@gmail.com", 
-        "password" : "password123" 
+        "password" : "password123",
+        "comments": [],
+        "bids": []
     }
    
 ]

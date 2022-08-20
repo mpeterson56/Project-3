@@ -16,22 +16,25 @@ db.once('open', async () => {
     // await Comment.deleteMany({});
     // await Bids.deleteMany({});
 
-    await Student.insertMany(studentSeeds);
+    const x = await Student.insertMany(studentSeeds);
+    console.log(x);
     await Tutor.insertMany(tutorSeeds);
 
     // await Student.create(studentSeeds);
     // await Tutor.create(tutorSeeds);
 
     for (let i = 0; i < assignmentSeeds.length; i++) {
-      const { _id, assignmentAuthor } = await Assignment.create(assignmentSeeds[i]);
+      const { _id, username } = await Assignment.create(assignmentSeeds[i]);
+      console.log(username);
       const student = await Student.findOneAndUpdate(
-        { username: assignmentAuthor },
+        { username: username },
         {
           $addToSet: {
             Assignment: _id,
           },
         }
       );
+      console.log(student);
     }
   } catch (err) {
     console.error(err);
