@@ -31,7 +31,7 @@ function TutorSignup(props) {
 
     return (
         <div className="container my-1">
-        <Link to="/login">Go to Login</Link>
+        <Link to="/tutorLogin">Go to Login</Link>
 
         <h2>Tutor Signup</h2>
         <form onSubmit={handleFormSubmit}>

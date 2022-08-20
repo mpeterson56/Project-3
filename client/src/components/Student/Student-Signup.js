@@ -31,7 +31,7 @@ function StudentSignup(props) {
 
     return (
         <div className="container my-1">
-            <Link to="/login">Go to Login</Link>
+            <Link to="/studentLogin">Go to Login</Link>
 
             <h2>Student Signup</h2>
             <form onSubmit={handleFormSubmit}>
