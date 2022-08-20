@@ -67,9 +67,11 @@ const resolvers = {
 
     },
 
-    Mutation: {
-        add
-    }
+    // Mutation: {
+    //     addStudent: async (parent, args) => {
+    //         const student = await Student.create(args)
+    //     }
+    // }
 
     
 };
