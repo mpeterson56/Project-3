@@ -1,10 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
-import SignupForm from './components/Signup';
 import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import StudentLogin from './components/Student/Student-Login';
+import TutorLogin from './components/Tutor/Tutor-Login';
+import StudentSignup from './components/Student/Student-Signup';
+import TutorSignup from './components/Tutor/Tutor-Signup';
 
 
 const httpLink = createHttpLink({
@@ -33,7 +35,10 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-      <SignupForm setChecked={setChecked} checked={checked} />
+      <StudentSignup />
+      <TutorSignup />
+      <StudentLogin />
+      <TutorLogin />
       <Routes>
         
       </Routes>
