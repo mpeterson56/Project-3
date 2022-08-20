@@ -30,24 +30,24 @@ function StudentSignup(props) {
     };
 
     return (
-        <div className="container my-1">
-            <Link to="/login">Go to Login</Link>
-
-            <h2>Student Signup</h2>
-            <form onSubmit={handleFormSubmit}>
-                <div className="flex-row space-between my-2">
-                    <label htmlFor="firstName">Username:</label>
-                    <input
+        <div class="row">
+    
+            <h4 class="indigo-text text-darken-4">Student Signup</h4>
+            <form class="col s4 indigo darken-4" onSubmit={handleFormSubmit}>
+                <div>
+                    <label class="white-text" htmlFor="first_name">Username:</label>
+                    <input class="white-text"
                         placeholder="Username"
-                        name="userName"
-                        type="userName"
-                        id="userName"
+                        name="first_name"
+                        type="text"
+                        id="first_name"
                         onChange={handleChange}
                     />
                     </div>
-                <div className="flex-row space-between my-2">
-                    <label htmlFor="email">Email:</label>
-                    <input
+                    
+                <div>
+                    <label class="white-text" htmlFor="email">Email:</label>
+                    <input class="white-text"
                         placeholder="Your Email"
                         name="email"
                         type="email"
@@ -55,9 +55,9 @@ function StudentSignup(props) {
                         onChange={handleChange}
                     />
                 </div>
-                <div className="flex-row space-between my-2">
-                    <label htmlFor="pwd">Password:</label>
-                    <input
+                <div >
+                    <label class="white-text" htmlFor="pwd">Password:</label>
+                    <input class="white-text"
                         placeholder="******"
                         name="password"
                         type="password"
@@ -65,11 +65,22 @@ function StudentSignup(props) {
                         onChange={handleChange}
                     />
                 </div>
-                <div className="flex-row flex-end">
-                    <button type="submit">Submit</button>
+                <div >
+                <p>
+                <button class="waves-effect waves-light btn-small" type="submit">Submit</button>
+                <span>     </span>
+                </p>
                 </div>
+                <p>
+                <button class="waves-effect waves-light btn-small" to="/studentLogin">Student Login</button>
+                <span>     </span>
+                <button class="waves-effect waves-light btn-small" to="/tutorLogin">Tutor Login</button>
+                <span>     </span>
+                <button class="waves-effect waves-light btn-small" to="/tutorSignup">Tutor Sign Up</button>
+                </p>
             </form>
-        </div>
+            
+        </div> 
     );
 }
 

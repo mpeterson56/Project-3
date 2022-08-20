@@ -30,14 +30,14 @@ function TutorLogin(props) {
   };
 
   return (
-    <div>
-      <Link to="/signup">Go to Signup</Link>
+    <div class="row">
+      {/* <Link to="/signup">Go to Signup</Link> */}
 
-      <h2>Tutor Login</h2>
-      <form onSubmit={handleFormSubmit}>
+      <h4 class="green-text text-darken-4">Tutor Login</h4>
+      <form class="col s4 green darken-4" onSubmit={handleFormSubmit}>
         <div>
-          <label htmlFor="email">Email address:</label>
-          <input
+          <label class="white-text" htmlFor="email">Email address:</label>
+          <input class="white-text"
             placeholder="Your Email"
             name="email"
             type="email"
@@ -46,8 +46,8 @@ function TutorLogin(props) {
           />
         </div>
         <div>
-          <label htmlFor="pwd">Password:</label>
-          <input
+          <label class="white-text" htmlFor="pwd">Password:</label>
+          <input class="white-text"
             placeholder="******"
             name="password"
             type="password"
@@ -60,8 +60,13 @@ function TutorLogin(props) {
             <p>The provided credentials are incorrect</p>
           </div>
         ) : null}
-        <div>
-          <button type="submit">Submit</button>
+        <div> <p>
+                <button class="waves-effect waves-light btn-small" type="submit">Submit</button>
+                <span>     </span>
+                <button class="waves-effect waves-light btn-small" to="/signup">Go to Signup</button>
+               
+                </p>
+       
         </div>
       </form>
     </div>
