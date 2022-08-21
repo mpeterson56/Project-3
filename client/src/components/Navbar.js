@@ -53,7 +53,7 @@ function Nav() {
                   Tutor 
                   <span> 
                   <Link to="/studentLogin"> Login</Link> /
-                  <Link to="/tutorSignup"> Sign Up</Link>                        
+                  <Link to="/tutorSignup"> Sign Up</Link>                       
                   </span>  
               </li>
             </ul>
