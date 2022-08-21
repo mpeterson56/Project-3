@@ -71,13 +71,13 @@ function StudentSignup(props) {
                 <span>     </span>
                 </p>
                 </div>
-                <p>
+                {/* <p>
                 <button class="waves-effect waves-light btn-small" to="/studentLogin">Student Login</button>
                 <span>     </span>
                 <button class="waves-effect waves-light btn-small" to="/tutorLogin">Tutor Login</button>
                 <span>     </span>
                 <button class="waves-effect waves-light btn-small" to="/tutorSignup">Tutor Sign Up</button>
-                </p>
+                </p> */}
             </form>
             
         </div> 

@@ -67,8 +67,13 @@ function TutorSignup(props) {
             </div>
             <div> <p>
                 <button class="waves-effect waves-light btn-small" type="submit">Submit</button>
-                <span>    </span>
-                <Link to="/login">Go to Login</Link>
+              
+                <span>       </span>
+                <Link to="/login">Tutor-Login</Link>
+                <span>       </span>
+                <Link to="/login">Student-Signup</Link>
+                <span>        </span>
+                <Link to="/login">Student-Login</Link>
                 </p>
             </div>
         </form>
