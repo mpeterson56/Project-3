@@ -67,11 +67,66 @@ const resolvers = {
 
     },
 
-    // Mutation: {
-    //     addStudent: async (parent, args) => {
-    //         const student = await Student.create(args)
-    //     }
-    // }
+    Mutation: {
+        addStudent: async (parent, args) => {
+            const student = await Student.create(args)
+            const token = signToken(student);
+
+            return { token, student };
+        },
+
+        addTutor: async (parent, args) => {
+            const tutor = await Tutor.create(args)
+            const token = signToken(tutor);
+
+            return { token, student };
+        },
+
+        // login: async (parent, { email, password }) => {
+        //     const student = await Student.findOne({ emial });
+
+        //     if (!student) {
+        //         throw new AuthenticationError('Incorrect credentials');
+        //     }
+
+        //     const correctPW = await student.isCorrectPassword(password);
+
+        //     if(!correctPW) {
+        //         throw new AuthenticationError('Incorrect credentials');
+        //     }
+
+        //     const token = signToken(student);
+        //     return { token, user };
+        // },
+
+        addAssignment: async (parent, args, context) => {
+            if (context.user) {
+                const assignment = await Assignment.create({ ...args, username: context.student.username });
+
+                await Student.findByIdAndUpdate(
+                    { _id: context.student._id },
+                    { $push: { assignments: assignment._id } },
+                    { new: true }
+                );
+
+                return assignment;
+            }
+
+            throw new AuthenticationError('You need to be logged in.');
+        },
+
+        addBid: async (parent, args, context) => {
+            if (context.tutor) {
+                const bid = await Bids.create({ ...args, username: context.tutor.tutorname });
+
+                await Tutor.findByIdAndUpdate(
+                    { _id: context.tutor._id },
+                    { $push: { bids.tutor._id }}
+                )
+            }
+        }
+
+    }
 
     
 };
