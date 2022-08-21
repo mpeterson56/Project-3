@@ -15,30 +15,49 @@ function Nav() {
             </ul>
           );
         } else {
-          return (
+          // return (
+          //   <ul>
+          //     <li>
+          //       <Link to="/studentSignup">
+          //         Student Signup
+          //       </Link>
+          //     </li>
+          //     <li>
+          //       <Link to="/studentLogin">
+          //         Student Login
+          //       </Link>
+          //     </li>
+          //     <li>
+          //       <Link to="/tutorSignup">
+          //         Tutor Signup
+          //       </Link>
+          //     </li>
+          //     <li>
+          //       <Link to="/tutorLogin">
+          //         Tutor Login
+          //       </Link>
+          //     </li>
+          //   </ul>
+          // );
+           return (
             <ul>
               <li>
-                <Link to="/studentSignup">
-                  Student Signup
-                </Link>
+                  Student 
+                  <span> 
+                  <Link to="/studentLogin"> Login</Link> /
+                  <Link to="/studentSignup"> Sign Up</Link>                                     
+                  </span>  
               </li>
+            
               <li>
-                <Link to="/studentLogin">
-                  Student Login
-                </Link>
-              </li>
-              <li>
-                <Link to="/tutorSignup">
-                  Tutor Signup
-                </Link>
-              </li>
-              <li>
-                <Link to="/tutorLogin">
-                  Tutor Login
-                </Link>
+                  Tutor 
+                  <span> 
+                  <Link to="/studentLogin"> Login</Link> /
+                  <Link to="/tutorSignup"> Sign Up</Link>                        
+                  </span>  
               </li>
             </ul>
-          );
+          );         
         }
       }
     
