@@ -1,7 +1,8 @@
 const { Schema, model } = require("mongoose");
-//const bidsSchema = require('./Bids');
+
 const dateFormat = require("../utils/dateFormat");
 const commentSchema = require("../models/Comment");
+const bidsSchema = require("../models/Bids");
 
 const assignmentSchema = new Schema(
   {
@@ -23,17 +24,12 @@ const assignmentSchema = new Schema(
       default: Date.now,
       get: (timestamp) => dateFormat(timestamp),
     },
-
-    username: {
-      type: String,
-      required: true,
-    },
-
-    bids: [{ type: Schema.Types.ObjectId, ref: "Bids" }],
     subject: {
       type: String,
       required: true,
     },
+
+    bids: [bidsSchema],
     comments: [commentSchema],
   },
 

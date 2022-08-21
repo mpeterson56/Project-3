@@ -23,7 +23,7 @@ const studentSchema = new Schema(
       required: true,
       minlength: 5,
     },
-    assignment: [
+    assignments: [
       {
         type: Schema.Types.ObjectId,
         ref: "Assignment",

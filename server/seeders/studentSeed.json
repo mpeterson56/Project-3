@@ -1,0 +1,20 @@
+[
+    { 
+        "username" : "Tom", 
+        "email" : "tom@gmail.com", 
+        "password" : "password123",
+        "assignment" :[]
+    },
+    { 
+        "username" : "John", 
+        "email" : "john@gmail.com", 
+        "password" : "password123",
+        "assignment" :[]
+    },
+    { 
+        "username" : "Sam", 
+        "email" : "sam@gmail.com", 
+        "password" : "password123",
+        "assignment" :[]
+    }
+]

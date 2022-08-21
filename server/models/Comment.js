@@ -8,7 +8,7 @@ const commentSchema = new Schema(
       required: true,
       maxlength: 280,
     },
-    username: {
+    tutorname: {
       type: String,
       required: true,
     },

@@ -1,5 +1,7 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
+const bidsSchema = require("../models/Bids");
+const commentSchema = require("../models/Comment");
 
 const tutorSchema = new Schema(
   {
@@ -23,12 +25,7 @@ const tutorSchema = new Schema(
       required: true,
       minlength: 5,
     },
-    bids: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Bids",
-      },
-    ],
+    bids: [bidsSchema],
   },
   {
     toJSON: {
