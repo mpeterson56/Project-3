@@ -12,10 +12,10 @@ import StudentLogin from "./components/Student/Student-Login";
 import TutorLogin from "./components/Tutor/Tutor-Login";
 import StudentSignup from "./components/Student/Student-Signup";
 import TutorSignup from "./components/Tutor/Tutor-Signup";
-import StudentProfile from "./components/Student/Student-Profile";
-import TutorProfile from "./components/Tutor/Tutor-Profile";
-import Nav from "./components/Navbar";
-import Footer from "./components/Footer";
+// import StudentProfile from "./components/Student/Student-Profile";
+// import TutorProfile from "./components/Tutor/Tutor-Profile";
+// import Nav from "./components/Navbar";
+// import Footer from "./components/Footer";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
