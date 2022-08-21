@@ -1,0 +1,40 @@
+[
+    { 
+        "priceOffer" : "100$", 
+        "tutorname" : "james",
+        "assignment" : [
+            {
+                "description" : "I have a math assignment, help needed!",
+                "askPrice" : "50$", 
+                "username" : "Tom", 
+                "subject" : "math"
+            }
+        ]
+    },
+
+    { 
+        "priceOffer" : "80$", 
+        "tutorname" : "tony",
+        "assignment" : [
+            {
+                "description" : "I have a math assignment, help needed!",
+                "askPrice" : "50$", 
+                "username" : "Tom", 
+                "subject" : "math"
+            }
+        ]
+    },
+   
+    {  
+        "priceOffer" : "60$", 
+        "tutorname" : "sam",
+        "assignment" : [
+            {
+                "description" : "I have a math assignment, help needed!",
+                "askPrice" : "50$", 
+                "username" : "Tom", 
+                "subject" : "math"
+            }
+        ]
+    }
+]
