@@ -5,7 +5,7 @@ import AssignmentForm from '../AssignmentForm/index';
 
 import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
-import { QUERY_ASSIGNMENTS, QUERY_ME_STUDENT } from '../../utils/queries';
+import { QUERY_ASSIGNMENTS } from '../../utils/queries';
 
 const Homepage = () => {
   const { loading, data } = useQuery(QUERY_ASSIGNMENTS);
