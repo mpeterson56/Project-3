@@ -39,18 +39,555 @@ const StudentProfile = (props) => {
                 </h2>
             </div>
 
-            <div>
-                <div>
-                    {/* this will be swapped for AssignmentList */}
-                    {/* <ThoughtList
-                    thoughts={user.thoughts}
-                    title={`${user.username}'s thoughts...`}
-                    /> */}
-                </div>
+            <h3>JOBS</h3>
+
+      {/* <div class="container">
+      <div class="row">
+      
+      <div class="grid-example col s12 m6"><span class="flow-text">JOBS</span></div> */}
+
+      <div class="scrolling-wrapper-flexbox">
+        <div class="col s12 m6">
+          <div class=" card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
             </div>
-            {/* this will be swapped for AssignmentForm */}
-            {/* <div>{!userParam && <ThoughtForm />}</div> */}
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
         </div>
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+      <div class="scrolling-wrapper-flexbox">
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scrolling-wrapper-flexbox">
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scrolling-wrapper-flexbox">
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card deep-purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
     );
 };
 
