@@ -124,9 +124,9 @@ const resolvers = {
     },
 
     loginTutor: async (parent, { email, password }) => {
-      const student = await Student.findOne({ email });
+      const tutor = await Student.findOne({ email });
 
-      if (!student) {
+      if (!tutor) {
         throw new AuthenticationError("Incorrect credentials");
       }
 
