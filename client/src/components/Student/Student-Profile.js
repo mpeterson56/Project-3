@@ -3,6 +3,7 @@ import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_STUDENT, QUERY_ME_STUDENT } from '../../utils/queries';
 import Auth from '../../utils/auth';
+import AssignmentForm from '../AssignmentForm/index'
 
 const StudentProfile = (props) => {
     const { username: userParam } = useParams();
@@ -48,8 +49,8 @@ const StudentProfile = (props) => {
                     /> */}
                 </div>
             </div>
-            {/* this will be swapped for AssignmentForm */}
-            {/* <div>{!userParam && <ThoughtForm />}</div> */}
+            
+             <div>{!userParam && <AssignmentForm />}</div>
         </div>
     );
 };
