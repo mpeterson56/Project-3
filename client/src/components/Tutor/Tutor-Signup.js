@@ -36,12 +36,12 @@ function TutorSignup(props) {
         <h2>Tutor Signup</h2>
         <form onSubmit={handleFormSubmit}>
             <div>
-                <label htmlFor="firstName">Tutor's username:</label>
+                <label htmlFor="tutorname">Tutor's username:</label>
                 <input
                     placeholder="Tutor's Username"
-                    name="tutorName"
-                    type="tutorName"
-                    id="tutorName"
+                    name="tutorname"
+                    type="tutorname"
+                    id="tutorname"
                     onChange={handleChange}
                 />
                 </div>
