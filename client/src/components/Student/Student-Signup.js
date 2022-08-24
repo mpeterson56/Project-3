@@ -8,18 +8,6 @@ function StudentSignup(props) {
     const [formState, setFormState] = useState({ username: '', email: '', password: '' });
     const [addStudent] = useMutation(ADD_STUDENT);
 
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        const mutationResponse = await addStudent({
-            variables: {
-                username: formState.username,
-                email: formState.email,
-                password: formState.password,
-            },
-        });
-        const token = mutationResponse.data.addStudent.token;
-        Auth.login(token);
-    };
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -28,6 +16,37 @@ function StudentSignup(props) {
             [name]: value,
         });
     };
+
+    // const handleFormSubmit = async (event) => {
+    //     event.preventDefault();
+    //     const mutationResponse = await addStudent({
+    //         variables: {
+    //             username: formState.username,
+    //             email: formState.email,
+    //             password: formState.password,
+    //         },
+    //     });
+    //     const token = mutationResponse.data.addStudent.token;
+    //     Auth.login(token);
+    // };
+
+
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await addStudent({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.addStudent.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+    
 
     return (
         <div>

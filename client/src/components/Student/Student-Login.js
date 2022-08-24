@@ -8,19 +8,7 @@ function StudentLogin(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN_STUDENT);
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const mutationResponse = await login({
-        variables: { email: formState.email, password: formState.password },
-      });
-      const token = mutationResponse.data.loginStudent.token;
-      Auth.login(token);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
+  // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormState({
@@ -28,6 +16,40 @@ function StudentLogin(props) {
       [name]: value,
     });
   };
+
+
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    // try {
+    //   const mutationResponse = await login({
+    //     variables: { email: formState.email, password: formState.password },
+    //   });
+    //   const token = mutationResponse.data.loginStudent.token;
+    //   Auth.login(token);
+    // } catch (e) {
+    //   console.log(e);
+    // }
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
+
+    // clear form values
+    setFormState({
+      email: '',
+      password: '',
+    });
+
+
+  };
+
+  
 
   return (
     <div>

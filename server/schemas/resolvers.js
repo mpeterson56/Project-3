@@ -67,15 +67,73 @@ const resolvers = {
 
     },
 
-    // Mutation: {
-    //     addStudent: async (parent, args) => {
-    //         const student = await Student.create(args)
-    //     }
-    // }
-
+    Mutation: {
+        addStudent: async (parent, args) => {
+          const student = await Student.create(args);
+          const token = signToken(student);
     
+          return { token, student };
+        },
+        login: async (parent, { email, password }) => {
+          const student = await Student.findOne({ email });
+    
+          if (!student) {
+            throw new AuthenticationError('Incorrect credentials');
+          }
+    
+          const correctPw = await student.isCorrectPassword(password);
+    
+          if (!correctPw) {
+            throw new AuthenticationError('Incorrect credentials');
+          }
+    
+          const token = signToken(student);
+          return { token, student };
+        },
+        addAssignment: async (parent, args, context) => {
+          if (context.student) {
+            const assignment = await Assignment.create({ ...args, username: context.student.username });
+    
+            await Student.findByIdAndUpdate(
+              { _id: context.student._id },
+              { $push: { assignments: assignment._id } },
+              { new: true }
+            );
+    
+            return assignment;
+          }
+    
+          throw new AuthenticationError('You need to be logged in!');
+        },
+        addComment: async (parent, { assignmentId, commentBody }, context) => {
+          if (context.student) {
+            const updatedAssignment = await Assignment.findOneAndUpdate(
+              { _id: assignmentId },
+              { $push: { comments: { commentBody, username: context.student.username } } },
+              { new: true, runValidators: true }
+            );
+    
+            return updatedAssignment;
+          }
+    
+          throw new AuthenticationError('You need to be logged in!');
+        },
+
+        // addBids: async (parent, { bidId }, context) => {
+        //   if (context.student) {
+        //     const updatedStudent = await Student.findOneAndUpdate(
+        //       { _id: context.student._id },
+        //       { $addToSet: { bids: bidId } },
+        //       { new: true }
+        //     ).populate('bids');
+    
+        //     return updatedStudent;
+        //   }
+    
+        //   throw new AuthenticationError('You need to be logged in!');
+        // }
+    }
+
 };
-
-
 
 module.exports = resolvers;

@@ -54,10 +54,10 @@ type Auth {
 type Query {
     me_Student: Student
     me_Tutor: Tutor 
-    student(username: String!): Student
-    tutor(tutorname: String!): Tutor
     students: [Student]
     tutors: [Tutor]
+    student(username: String!): Student
+    tutor(tutorname: String!): Tutor
     assignments(username: String!): [Assignment]
     assignment(_id: ID!): Assignment
     bids(tutorname: String!): [Bids]
