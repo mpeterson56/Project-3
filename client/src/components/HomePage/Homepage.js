@@ -7,7 +7,7 @@ import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
 import { QUERY_ASSIGNMENTS, QUERY_ME_STUDENT } from '../../utils/queries';
 
-const Home = () => {
+const Homepage = () => {
   const { loading, data } = useQuery(QUERY_ASSIGNMENTS);
   const assignments = data?.assignments || [];
 
@@ -36,4 +36,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Homepage;

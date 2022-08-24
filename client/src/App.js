@@ -11,6 +11,9 @@ import StudentProfile from './components/Student/Student-Profile';
 import TutorProfile from './components/Tutor/Tutor-Profile';
 import Nav from './components/Navbar';
 import Footer from './components/Footer';
+import AssignmentForm from './components/AssignmentForm';
+import AssignmentList from './components/AssignmentList';
+import Homepage from './components/HomePage/Homepage';
 
 
 const httpLink = createHttpLink({
@@ -41,6 +44,10 @@ function App() {
         <div>
             <Nav />
             <Routes>
+              <Route 
+                path='/homepage'
+                element={<Homepage />}
+              />
               <Route
                 path='/studentLogin'
                 element={<StudentLogin />}
