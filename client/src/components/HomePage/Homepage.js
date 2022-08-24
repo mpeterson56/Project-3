@@ -18,8 +18,7 @@ const Homepage = () => {
       <div>
         {loggedIn && (
           <div>
-            Testing
-            {/* <AssignmentForm /> */}
+            <AssignmentForm />
           </div>
         )}
         <div>
