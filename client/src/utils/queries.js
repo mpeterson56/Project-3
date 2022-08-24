@@ -102,3 +102,13 @@ export const QUERY_ASSIGNMENTS = gql`
     }
   }
 `;
+
+export const QUERY_ASSIGNMENT = gql`
+  query thought($id: ID!) {
+    thought(_id: $id) {
+      _id
+      assignmentText
+      username
+    }
+  }
+`;
