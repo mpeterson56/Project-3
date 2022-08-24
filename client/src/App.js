@@ -43,11 +43,12 @@ function App() {
       <Router>
         <div>
             <Nav />
+            <Homepage />
             <Routes>
-              <Route 
-                path='/'
+              {/* <Route 
+                path='/homepage'
                 element={<Homepage />}
-              />
+              /> */}
               <Route
                 path='/studentLogin'
                 element={<StudentLogin />}
