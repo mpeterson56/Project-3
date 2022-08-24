@@ -6,12 +6,12 @@ import Auth from '../../utils/auth';
 
 function TutorLogin(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
-  const [login, { error }] = useMutation(LOGIN_TUTOR);
+  const [loginTutor, { error }] = useMutation(LOGIN_TUTOR);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      const mutationResponse = await login({
+      const mutationResponse = await loginTutor({
         variables: { email: formState.email, password: formState.password },
       });
       const token = mutationResponse.data.login.token;

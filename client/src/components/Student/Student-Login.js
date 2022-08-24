@@ -6,9 +6,25 @@ import Auth from '../../utils/auth';
 
 function StudentLogin(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
-  const [login, { error }] = useMutation(LOGIN_STUDENT);
+  const [loginStudent, { error }] = useMutation(LOGIN_STUDENT);
+
 
   // update state based on form input changes
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const mutationResponse = await loginStudent({
+        variables: { email: formState.email, password: formState.password },
+      });
+      const token = mutationResponse.data.loginStudent.token;
+      Auth.login(token);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormState({
@@ -18,28 +34,6 @@ function StudentLogin(props) {
   };
 
 
-  // submit form
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    // try {
-    //   const mutationResponse = await login({
-    //     variables: { email: formState.email, password: formState.password },
-    //   });
-    //   const token = mutationResponse.data.loginStudent.token;
-    //   Auth.login(token);
-    // } catch (e) {
-    //   console.log(e);
-    // }
-    try {
-      const { data } = await login({
-        variables: { ...formState },
-      });
-
-      Auth.login(data.login.token);
-    } catch (e) {
-      console.error(e);
-    }
-
     // clear form values
     setFormState({
       email: '',
@@ -47,9 +41,8 @@ function StudentLogin(props) {
     });
 
 
-  };
-
   
+
 
   return (
     <div>

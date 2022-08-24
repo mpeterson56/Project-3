@@ -23,8 +23,8 @@ query student($username: String!) {
 `;
 
 export const QUERY_TUTOR = gql`
-query tutor($username: String!) {
-    tutor(username: $username) {
+query tutor($tutorname: String!) {
+    tutor(tutorname: $tutorname) {
         _id
         tutorname
         email
