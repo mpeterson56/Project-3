@@ -3,7 +3,7 @@ import AssignmentList from '../AssignmentList/index';
 import AssignmentForm from '../AssignmentForm/index';
 
 
-import Auth from '../utils/auth';
+import Auth from '../../utils/auth';
 import { useQuery } from '@apollo/client';
 import { QUERY_ASSIGNMENTS } from '../../utils/queries';
 
