@@ -1,0 +1,23 @@
+[
+    { 
+        "username" : "Tom", 
+        "description" : "I have a math assignment, help needed!",
+        "askPrice" : "50$", 
+        "subject" : "math",
+        "bids" : [
+            {
+                "priceOffer" : "100$",
+                "tutorname" : "james"   
+            }
+        ],
+
+        "comments" : [
+            {
+                "commentBody" : "I can help you with that.", 
+                "tutorname" : "james"
+            }
+        ]
+
+    }
+   
+]
