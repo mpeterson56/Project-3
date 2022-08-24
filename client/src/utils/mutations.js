@@ -6,6 +6,8 @@ mutation loginStudent($email: String!, $password: String!) {
         token
         student {
             _id
+            email
+            password
         }
     }
 }
@@ -17,6 +19,8 @@ mutation loginTutor($email: String!, $password: String!) {
         token
         tutor {
             _id
+            email
+            password
         }
     }
 }
