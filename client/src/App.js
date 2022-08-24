@@ -42,13 +42,14 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
+          <StoreProvider>
+
             <Nav />
-            <Homepage />
             <Routes>
-              {/* <Route 
+              <Route
                 path='/homepage'
                 element={<Homepage />}
-              /> */}
+              />
               <Route
                 path='/studentLogin'
                 element={<StudentLogin />}
@@ -74,7 +75,8 @@ function App() {
                 element={<TutorProfile />}
               />
             </Routes>
-            <Footer />
+          </StoreProvider>
+          <Footer />
         </div>
       </Router>
 
