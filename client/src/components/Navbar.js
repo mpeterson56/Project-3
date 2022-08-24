@@ -36,17 +36,20 @@ function Nav() {
       );
     }
   }
-
+  
   return (
     <header>
       <h1>
+        <Link to='/homepage'>
         Tutor Coin
+        </Link>
       </h1>
       <nav>
         {showNavigation()}
       </nav>
     </header>
   );
+
 }
 
 export default Nav;
