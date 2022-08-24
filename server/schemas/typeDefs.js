@@ -69,7 +69,8 @@ type Query {
 
 
 type Mutation {
-    login(email: String!, password: String!): Auth
+    loginStudent(email: String!, password: String!): Auth
+    loginTutor(email: String!, password: String!): Auth
     addStudent(username: String!, email: String!, password: String!): Auth
     addTutor(tutorname: String!, email: String!, password: String!): Auth
     addAssignment(assignmentText: String!): Assignment

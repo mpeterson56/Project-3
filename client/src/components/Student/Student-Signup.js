@@ -55,12 +55,12 @@ function StudentSignup(props) {
             <h2>Student Signup</h2>
             <form onSubmit={handleFormSubmit}>
                 <div>
-                    <label htmlFor="firstName">Username:</label>
+                    <label htmlFor="username">Username:</label>
                     <input
-                        placeholder="Username"
-                        name="userName"
-                        type="userName"
-                        id="userName"
+                        placeholder="username"
+                        name="username"
+                        type="username"
+                        id="username"
                         onChange={handleChange}
                     />
                     </div>

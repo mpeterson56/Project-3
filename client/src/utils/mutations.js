@@ -37,11 +37,11 @@ mutation addStudent($username: String!, $password: String!, $email: String!) {
 `;
 
 export const ADD_TUTOR = gql`
-mutation addTutor($username: String!, $password: String!, $email: String!) {
-    addTutor(username: $username, password: $password, email: $email){
+mutation addTutor($tutorname: String!, $password: String!, $email: String!) {
+    addTutor(tutorname: $tutorname, password: $password, email: $email){
         tutor {
             _id
-            username
+            tutorname
             email
         }
         token
