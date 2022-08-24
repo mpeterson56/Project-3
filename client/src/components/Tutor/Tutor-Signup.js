@@ -5,14 +5,14 @@ import Auth from '../../utils/auth';
 import { ADD_TUTOR } from '../../utils/mutations'
 
 function TutorSignup(props) {
-    const [formState, setFormState] = useState({ username: '', email: '', password: '' });
+    const [formState, setFormState] = useState({ tutorname: '', email: '', password: '' });
     const [addTutor] = useMutation(ADD_TUTOR);
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
         const mutationResponse = await addTutor({
             variables: {
-                username: formState.username,
+                tutorname: formState.tutorname,
                 email: formState.email,
                 password: formState.password,
             },
@@ -36,12 +36,12 @@ function TutorSignup(props) {
         <h2>Tutor Signup</h2>
         <form onSubmit={handleFormSubmit}>
             <div>
-                <label htmlFor="firstName">Username:</label>
+                <label htmlFor="firstName">Tutor's username:</label>
                 <input
-                    placeholder="Username"
-                    name="userName"
-                    type="userName"
-                    id="userName"
+                    placeholder="Tutor's Username"
+                    name="tutorName"
+                    type="tutorName"
+                    id="tutorName"
                     onChange={handleChange}
                 />
                 </div>
