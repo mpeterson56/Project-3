@@ -16,6 +16,7 @@ function TutorLogin(props) {
       });
       const token = mutationResponse.data.login.token;
       Auth.login(token);
+      console.log(token)
     } catch (e) {
       console.log(e);
     }

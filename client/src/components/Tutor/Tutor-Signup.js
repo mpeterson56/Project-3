@@ -37,15 +37,15 @@ function TutorSignup(props) {
       <h4 class="green-text text-darken-4">Tutor Signup</h4>
       <form class="col s4 green darken-4" onSubmit={handleFormSubmit}>
         <div>
-          <label class="white-text" htmlFor="firstName">
-            Username:
+          <label class="white-text" htmlFor="tutorName">
+            Tutorname:
           </label>
           <input
             class="white-text"
-            placeholder="username"
-            name="username"
+            placeholder="tutorname"
+            name="tutorname"
             type="text"
-            id="username"
+            id="tutorname"
             onChange={handleChange}
           />
         </div>
