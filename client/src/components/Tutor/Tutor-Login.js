@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { Link } from 'react-router-dom';
-import { LOGIN_TUTOR } from '../../utils/mutations';
-import Auth from '../../utils/auth';
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { LOGIN_TUTOR } from "../../utils/mutations";
+import Auth from "../../utils/auth";
 
 function TutorLogin(props) {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ email: "", password: "" });
   const [loginTutor, { error }] = useMutation(LOGIN_TUTOR);
 
   const handleFormSubmit = async (event) => {
@@ -14,8 +13,9 @@ function TutorLogin(props) {
       const mutationResponse = await loginTutor({
         variables: { email: formState.email, password: formState.password },
       });
-      const token = mutationResponse.data.login.token;
+      const token = mutationResponse.data.loginTutor.token;
       Auth.login(token);
+      console.log("TOKEN LINE 19 TUTOR LOGIN.JS", token)
     } catch (e) {
       console.log(e);
     }
@@ -30,14 +30,15 @@ function TutorLogin(props) {
   };
 
   return (
-    <div>
-      <Link to="/tutorSignup">Go to Signup</Link>
-
-      <h2>Tutor Login</h2>
-      <form onSubmit={handleFormSubmit}>
+    <div class="row">
+      <h4 class="green-text text-darken-4">Tutor Login</h4>
+      <form class="col s4 green darken-4" onSubmit={handleFormSubmit}>
         <div>
-          <label htmlFor="email">Email address:</label>
+          <label class="white-text" htmlFor="email">
+            Email address:
+          </label>
           <input
+            class="white-text"
             placeholder="Your Email"
             name="email"
             type="email"
@@ -46,8 +47,11 @@ function TutorLogin(props) {
           />
         </div>
         <div>
-          <label htmlFor="pwd">Password:</label>
+          <label class="white-text" htmlFor="pwd">
+            Password:
+          </label>
           <input
+            class="white-text"
             placeholder="******"
             name="password"
             type="password"
@@ -61,7 +65,12 @@ function TutorLogin(props) {
           </div>
         ) : null}
         <div>
-          <button type="submit">Submit</button>
+          {" "}
+          <p>
+            <button class="waves-effect waves-light btn-small" type="submit">
+              Submit
+            </button>
+          </p>
         </div>
       </form>
     </div>

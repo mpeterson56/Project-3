@@ -73,7 +73,7 @@ type Mutation {
     loginTutor(email: String!, password: String!): Auth
     addStudent(username: String!, email: String!, password: String!): Auth
     addTutor(tutorname: String!, email: String!, password: String!): Auth
-    addAssignment(assignmentText: String!): Assignment
+    addAssignment(description: String!): Assignment
     addComment(commentId: ID!, commentBody: String!): Assignment
     addBid(bidId: ID!, bidBody: String!): Bids
 }

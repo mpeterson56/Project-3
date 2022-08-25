@@ -1,76 +1,88 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
-import Auth from '../../utils/auth';
-import { ADD_TUTOR } from '../../utils/mutations'
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import Auth from "../../utils/auth";
+import { ADD_TUTOR } from "../../utils/mutations";
 
 function TutorSignup(props) {
-    const [formState, setFormState] = useState({ tutorname: '', email: '', password: '' });
-    const [addTutor] = useMutation(ADD_TUTOR);
+  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [addTutor] = useMutation(ADD_TUTOR);
 
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        const mutationResponse = await addTutor({
-            variables: {
-                tutorname: formState.tutorname,
-                email: formState.email,
-                password: formState.password,
-            },
-        });
-        const token = mutationResponse.data.addTutor.token;
-        Auth.login(token);
-    };
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const mutationResponse = await addTutor({
+      variables: {
+        tutorname: formState.tutorname,
+        email: formState.email,
+        password: formState.password,
+      },
+    });
+    const token = mutationResponse.data.addTutor.token;
+    Auth.login(token);
+    console.log("token", token)
+  };
 
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormState({
-            ...formState,
-            [name]: value,
-        });
-    };
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
-    return (
+  return (
+    <div class="row">
+      <h4 class="green-text text-darken-4">Tutor Signup</h4>
+      <form class="col s4 green darken-4" onSubmit={handleFormSubmit}>
         <div>
-        <Link to="/tutorLogin">Go to Login</Link>
-
-        <h2>Tutor Signup</h2>
-        <form onSubmit={handleFormSubmit}>
-            <div>
-                <label htmlFor="tutorname">Tutor's username:</label>
-                <input
-                    placeholder="Tutor's Username"
-                    name="tutorname"
-                    type="tutorname"
-                    id="tutorname"
-                    onChange={handleChange}
-                />
-                </div>
-            <div>
-                <label htmlFor="email">Email:</label>
-                <input
-                    placeholder="Your Email"
-                    name="email"
-                    type="email"
-                    id="email"
-                    onChange={handleChange}
-                />
-            </div>
-            <div>
-                <label htmlFor="pwd">Password:</label>
-                <input
-                    placeholder="******"
-                    name="password"
-                    type="password"
-                    id="pwd"
-                    onChange={handleChange}
-                />
-            </div>
-            <div>
-                <button type="submit">Submit</button>
-            </div>
-        </form>
+          <label class="white-text" htmlFor="tutorName">
+            Username:
+          </label>
+          <input
+            class="white-text"
+            placeholder="username"
+            name="tutorname"
+            type="text"
+            id="tutorname"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label class="white-text" htmlFor="email">
+            Email:
+          </label>
+          <input
+            class="white-text"
+            placeholder="Your Email"
+            name="email"
+            type="email"
+            id="email"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label class="white-text" htmlFor="pwd">
+            Password:
+          </label>
+          <input
+            class="white-text"
+            placeholder="******"
+            name="password"
+            type="password"
+            id="pwd"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          
+          <p>
+            <button class="waves-effect waves-light btn-small" type="submit">
+              Submit
+            </button>
+          </p>
+        </div>
+      </form>
     </div>
-    );
+  );
 }
 
 export default TutorSignup;

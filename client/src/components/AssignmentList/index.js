@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const AssignmentList = ({ assignments, title }) => {
   if (!assignments.length) {
-    return <h3>No Assignments Yet</h3>;
+    return <h3>No assignments Yet</h3>;
   }
 
   return (
@@ -11,24 +11,20 @@ const AssignmentList = ({ assignments, title }) => {
       <h3>{title}</h3>
       {assignments &&
         assignments.map(assignment => (
-          <div key={assignment._id} className="card mb-3">
-            <p className="card-header">
+          <div key={assignment._id}>
+            <p>
               <Link
-                to={`/profile/${assignment.username}`}
+                to={`/studentProfile/${assignment.username}`}
                 style={{ fontWeight: 700 }}
                 className="text-light"
               >
                 {assignment.username}
               </Link>{' '}
-              thought on {assignment.createdAt}
+              assignment on {assignment.createdAt}
             </p>
-            <div className="card-body">
-              <Link to={`/thought/${assignment._id}`}>
-                <p>{assignment.thoughtText}</p>
-                <p className="mb-0">
-                  Reactions: {assignment.reactionCount} || Click to{' '}
-                  {assignment.reactionCount ? 'see' : 'start'} the discussion!
-                </p>
+            <div>
+              <Link to={`/A/${assignment._id}`}>
+                <p>{assignment.assignmentText}</p>
               </Link>
             </div>
           </div>

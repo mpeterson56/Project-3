@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_STUDENT, QUERY_ME_STUDENT } from '../../utils/queries';
 import Auth from '../../utils/auth';
 import AssignmentForm from '../AssignmentForm/index'
+import AssignmentList from '../AssignmentList';
 
 const StudentProfile = (props) => {
     const { username: userParam } = useParams();
@@ -12,7 +13,7 @@ const StudentProfile = (props) => {
         variables: { username: userParam },
     });
 
-    const user = data?.me || data?.user || {};
+    const user = data?.me_Student || data?.student || {};
 
     // navigate to personal profile page if username is yours
     if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
@@ -42,11 +43,10 @@ const StudentProfile = (props) => {
 
             <div>
                 <div>
-                    {/* this will be swapped for AssignmentList */}
-                    {/* <ThoughtList
-                    thoughts={user.thoughts}
-                    title={`${user.username}'s thoughts...`}
-                    /> */}
+                    <AssignmentList
+                    Assignments={user.Assignments}
+                    title={`${user.username}'s Assignments...`}
+                    />
                 </div>
             </div>
             
