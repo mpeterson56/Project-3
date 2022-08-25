@@ -20,7 +20,7 @@ const AssignmentForm = () => {
           data: { me: { ...me, assignment: [...me.assignment, addAssignment] } },
         });
       } catch (e) {
-        console.warn("First thought insertion by user!")
+        console.warn("First Assignment insertion by user!")
       }
 
       // update thought array's cache
@@ -69,7 +69,7 @@ const AssignmentForm = () => {
         onSubmit={handleFormSubmit}
       >
         <textarea
-          placeholder="Here's a new thought..."
+          placeholder="New Assignments"
           value={assignmentText}
           onChange={handleChange}
         ></textarea>
