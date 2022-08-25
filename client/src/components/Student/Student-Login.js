@@ -7,7 +7,6 @@ import Auth from '../../utils/auth';
 function StudentLogin(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [loginStudent, { error }] = useMutation(LOGIN_STUDENT);
- console.log('PROPS PARAMATER LINE 10 STUDENT LOGINS.JS',props)
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -24,7 +23,6 @@ function StudentLogin(props) {
   };
 
   const handleChange = (event) => {
-    console.log('EVENT LINE 26 STUDENT LOGIN JS', event)
     const { name, value } = event.target;
     setFormState({
       ...formState,

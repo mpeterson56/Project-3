@@ -5,7 +5,7 @@ import Auth from '../../utils/auth';
 import { ADD_STUDENT } from '../../utils/mutations'
 
 function StudentSignup(props) {
-    const [formState, setFormState] = useState({ username: '', email: '', password: '' });
+    const [formState, setFormState] = useState({ email: '', password: '' });
     const [addStudent] = useMutation(ADD_STUDENT);
 
     const handleFormSubmit = async (event) => {
