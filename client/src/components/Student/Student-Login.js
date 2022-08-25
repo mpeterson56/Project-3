@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { Link } from 'react-router-dom';
-import { LOGIN_STUDENT } from '../../utils/mutations';
-import Auth from '../../utils/auth';
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { Link } from "react-router-dom";
+import { LOGIN_STUDENT } from "../../utils/mutations";
+import Auth from "../../utils/auth";
 
 function StudentLogin(props) {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ email: "", password: "" });
   const [loginStudent, { error }] = useMutation(LOGIN_STUDENT);
  console.log('PROPS PARAMATER LINE 10 STUDENT LOGINS.JS',props)
 
@@ -33,14 +33,15 @@ function StudentLogin(props) {
   };
 
   return (
-    <div>
-      <Link to="/studentSignup">Go to Signup</Link>
-
-      <h2>Student Login</h2>
-      <form onSubmit={handleFormSubmit}>
+    <div class="row">
+      <h4 class="indigo-text text-darken-4">Student Login</h4>
+      <form class="col s4 indigo darken-4" onSubmit={handleFormSubmit}>
         <div>
-          <label htmlFor="email">Email address:</label>
+          <label class="white-text" htmlFor="email">
+            Email address:
+          </label>
           <input
+            class="white-text"
             placeholder="Your Email"
             name="email"
             type="email"
@@ -49,8 +50,11 @@ function StudentLogin(props) {
           />
         </div>
         <div>
-          <label htmlFor="pwd">Password:</label>
+          <label class="white-text" htmlFor="pwd">
+            Password:
+          </label>
           <input
+            class="white-text"
             placeholder="******"
             name="password"
             type="password"
@@ -64,7 +68,11 @@ function StudentLogin(props) {
           </div>
         ) : null}
         <div>
-          <button type="submit">Submit</button>
+          <p>
+            <button class="waves-effect waves-light btn-small" type="submit">
+              Submit
+            </button>
+          </p>
         </div>
       </form>
     </div>
