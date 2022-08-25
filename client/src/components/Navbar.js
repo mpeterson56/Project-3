@@ -15,13 +15,13 @@ function Nav() {
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li>
-                <Link class="indigo-text text-darken-4" to="/Jobs">
-                  Jobs
+                <Link class="indigo-text text-darken-4" to="/studentProfile">
+                  Student Profile
                 </Link>
               </li>
               <li>
-                <Link class="indigo-text text-darken-4" to="/Account">
-                  Account
+                <Link class="indigo-text text-darken-4" to="/tutorProfile">
+                  Tutor Profile
                 </Link>
               </li>
               <li>
