@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { Link } from "react-router-dom";
 import { LOGIN_TUTOR } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 
@@ -14,9 +13,9 @@ function TutorLogin(props) {
       const mutationResponse = await loginTutor({
         variables: { email: formState.email, password: formState.password },
       });
-      const token = mutationResponse.data.login.token;
+      const token = mutationResponse.data.loginTutor.token;
       Auth.login(token);
-      console.log(token)
+      console.log("TOKEN LINE 19 TUTOR LOGIN.JS", token)
     } catch (e) {
       console.log(e);
     }

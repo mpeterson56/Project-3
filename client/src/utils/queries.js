@@ -82,7 +82,7 @@ export const QUERY_ME_TUTOR = gql`
 `;
 
 export const QUERY_ASSIGNMENTS = gql`
-  query assignments($username: String) {
+  query assignments($username: String!) {
     assignments(username: $username) {
         
       _id
