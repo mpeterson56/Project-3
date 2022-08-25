@@ -30,19 +30,19 @@ function StudentSignup(props) {
     };
 
     return (
-        <div>
-            <Link to="/studentLogin">Go to Login</Link>
+        <div class="row">
+           <h4 class="indigo-text text-darken-4">Student Signup</h4>
 
-            <h2>Student Signup</h2>
-            <form onSubmit={handleFormSubmit}>
+            <form class="col s4 indigo darken-4" onSubmit={handleFormSubmit}>
                 <div>
-                    <label htmlFor="username">Username:</label>
+                    <label class="white-text" htmlFor="username">Username:</label>
                     <input
                         placeholder="username"
                         name="username"
-                        type="username"
+                        type="text"
                         id="username"
                         onChange={handleChange}
+                        class="white-text"
                     />
                     </div>
                 <div>
@@ -53,6 +53,7 @@ function StudentSignup(props) {
                         type="email"
                         id="email"
                         onChange={handleChange}
+                        class="white-text"
                     />
                 </div>
                 <div>
@@ -63,10 +64,11 @@ function StudentSignup(props) {
                         type="password"
                         id="pwd"
                         onChange={handleChange}
+                        class="white-text"
                     />
                 </div>
                 <div>
-                    <button type="submit">Submit</button>
+                    <button class="waves-effect waves-light btn-small" type="submit">Submit</button>
                 </div>
             </form>
         </div>

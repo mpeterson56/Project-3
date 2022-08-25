@@ -42,10 +42,10 @@ function TutorSignup(props) {
           </label>
           <input
             class="white-text"
-            placeholder="Username"
-            name="first_name"
+            placeholder="username"
+            name="username"
             type="text"
-            id="first_name"
+            id="username"
             onChange={handleChange}
           />
         </div>
