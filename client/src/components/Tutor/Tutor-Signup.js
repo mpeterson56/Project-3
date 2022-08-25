@@ -35,11 +35,11 @@ function TutorSignup(props) {
       <form class="col s4 green darken-4" onSubmit={handleFormSubmit}>
         <div>
           <label class="white-text" htmlFor="tutorName">
-            Tutorname:
+            Username:
           </label>
           <input
             class="white-text"
-            placeholder="tutorname"
+            placeholder="username"
             name="tutorname"
             type="text"
             id="tutorname"
@@ -73,7 +73,7 @@ function TutorSignup(props) {
           />
         </div>
         <div>
-          {" "}
+          
           <p>
             <button class="waves-effect waves-light btn-small" type="submit">
               Submit

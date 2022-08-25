@@ -9,7 +9,7 @@ function Nav() {
 
         <nav>
           <div class="nav-wrapper teal accent-2">
-            <a href="#" class="brand-logo indigo-text text-darken-4">
+            <a href="/" class="brand-logo indigo-text text-darken-4">
               Tutor Coin
 
             </a>
