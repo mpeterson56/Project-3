@@ -6,10 +6,12 @@ function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
+
         <nav>
           <div class="nav-wrapper teal accent-2">
             <a href="#" class="brand-logo indigo-text text-darken-4">
               Tutor Coin
+
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li>
@@ -71,12 +73,15 @@ function Nav() {
       );
     }
   }
-
+  
   return (
     <header>
+
       <nav>{showNavigation()}</nav>
+
     </header>
   );
+
 }
 
 export default Nav;

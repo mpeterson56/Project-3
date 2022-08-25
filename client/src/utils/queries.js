@@ -40,7 +40,7 @@ query tutor($tutorname: String!) {
 
 export const QUERY_ME_STUDENT = gql`
     {
-        me {
+        me_Student {
             _id
             username
             email
@@ -67,7 +67,7 @@ export const QUERY_ME_STUDENT = gql`
 
 export const QUERY_ME_TUTOR = gql`
     {
-        me {
+        me_Tutor {
             _id
             tutorname
             email
@@ -99,6 +99,16 @@ export const QUERY_ASSIGNMENTS = gql`
         tutorname
         commentBody
       }
+    }
+  }
+`;
+
+export const QUERY_ASSIGNMENT = gql`
+  query thought($id: ID!) {
+    thought(_id: $id) {
+      _id
+      assignmentText
+      username
     }
   }
 `;
