@@ -6,53 +6,79 @@ function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <ul>
-          <li>
-            <span>
-            <Link to="/tutorProfile"> Tutor's Profile</Link> /
-            <Link to="/studentProfile"> Student's Profile</Link>
-            </span>
-          </li>
-          <li>
-            <a href="/" onClick={() => Auth.logout()}>
-              Logout
+
+        <nav>
+          <div class="nav-wrapper teal accent-2">
+            <a href="#" class="brand-logo indigo-text text-darken-4">
+              Tutor Coin
+
             </a>
-          </li>
-        </ul>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li>
+                <Link class="indigo-text text-darken-4" to="/Jobs">
+                  Jobs
+                </Link>
+              </li>
+              <li>
+                <Link class="indigo-text text-darken-4" to="/Account">
+                  Account
+                </Link>
+              </li>
+              <li>
+                {" "}
+                <a
+                  href="/"
+                  class="indigo-text text-darken-4"
+                  onClick={() => Auth.logout()}
+                >
+                  Logout
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       );
     } else {
       return (
-        <ul>
-          <li>
-            Student
-            <span>
-              <Link to="/studentLogin"> Login</Link> /
-              <Link to="/studentSignup"> Sign Up</Link>
-            </span>
-          </li>
-
-          <li>
-            Tutor
-            <span>
-              <Link to="/tutorLogin"> Login</Link> /
-              <Link to="/tutorSignup"> Sign Up</Link>
-            </span>
-          </li>
-        </ul>
+        <nav>
+          <div class="nav-wrapper teal accent-2">
+            <a href="/!" class="brand-logo indigo-text text-darken-4">
+              Tutor Coin
+            </a>
+      
+            <ul id="nav-moble" class="right hide-on-med-and-down">
+              <li>
+                <Link class="indigo-text text-darken-4" to="/studentLogin">
+                  Student Login
+                </Link>
+              </li>
+              <li>
+                <Link class="indigo-text text-darken-4" to="/tutorLogin">
+                  Tutor Login
+                </Link>
+              </li>
+              <li>
+                <Link class="indigo-text text-darken-4" to="/studentSignup">
+                  Student Signup
+                </Link>
+              </li>
+              <li>
+                <Link class="indigo-text text-darken-4" to="/tutorSignup">
+                  Tutor Signup
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
       );
     }
   }
   
   return (
     <header>
-      <h1>
-        <Link to='/'>
-        Tutor Coin
-        </Link>
-      </h1>
-      <nav>
-        {showNavigation()}
-      </nav>
+
+      <nav>{showNavigation()}</nav>
+
     </header>
   );
 
