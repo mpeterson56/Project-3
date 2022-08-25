@@ -6,7 +6,6 @@ import { ADD_TUTOR } from "../../utils/mutations";
 
 function TutorSignup(props) {
   const [formState, setFormState] = useState({
-    tutorname: "",
     email: "",
     password: "",
   });
