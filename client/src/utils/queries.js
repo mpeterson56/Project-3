@@ -88,6 +88,7 @@ export const QUERY_ASSIGNMENTS = gql`
       _id
       description
       askPrice
+      subject
       username
       bids {
         _id
@@ -111,6 +112,8 @@ export const QUERY_ASSIGNMENT = gql`
       _id
       description
       username
+      askPrice
+      subject
     }
   }
 `;

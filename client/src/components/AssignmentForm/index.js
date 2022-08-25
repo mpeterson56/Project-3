@@ -5,7 +5,7 @@ import { ADD_ASSIGNMENT } from '../../utils/mutations'
 import { QUERY_ASSIGNMENTS, QUERY_ME_STUDENT } from '../../utils/queries';
 
 const AssignmentForm = () => {
-  const [description, setText] = useState('');
+  const [assignment, setText] = useState({ description: "", subject: "", askPrice: "" });
   const [characterCount, setCharacterCount] = useState(0);
 
   const [addAssignment, { error }] = useMutation(ADD_ASSIGNMENT, {
@@ -33,12 +33,20 @@ const AssignmentForm = () => {
   });
 
   // update state based on form input changes
+  // const handleChange = (event) => {
+  //   if (event.target.value.length <= 280) {
+  //     setText(event.target.value);
+  //     setCharacterCount(event.target.value.length);
+  //   }
+  // };
+
   const handleChange = (event) => {
-    if (event.target.value.length <= 280) {
-      setText(event.target.value);
-      setCharacterCount(event.target.value.length);
-    }
-  };
+    const { name, value } = event.target;
+      setText({
+        ...assignment,
+        [name]: value,
+      });
+  }
 
   // submit form
   const handleFormSubmit = async (event) => {
@@ -46,7 +54,10 @@ const AssignmentForm = () => {
 
     try {
       await addAssignment({
-        variables: { description },
+        variables: { 
+          description: assignment.description, 
+          subject: assignment.subject, 
+          askPrice: assignment.askPrice }
       });
 
       // clear form value
@@ -59,18 +70,28 @@ const AssignmentForm = () => {
 
   return (
     <div>
-      <p
+      {/* <p
         className={` ${characterCount === 280 || error ? 'text-error' : ''}`}
       >
         Character Count: {characterCount}/280
         {error && <span>Something went wrong...</span>}
-      </p>
+      </p> */}
       <form
         onSubmit={handleFormSubmit}
       >
         <textarea
-          placeholder="New Assignments"
-          value={description}
+          placeholder='Subject'
+          name={assignment.subject}
+          onChange={handleChange}
+          ></textarea>
+        <textarea
+          placeholder="Description"
+          name={assignment.description}
+          onChange={handleChange}
+        ></textarea>
+        <textarea
+          placeholder="Price"
+          name={assignment.askPrice}
           onChange={handleChange}
         ></textarea>
         <button type="submit">
