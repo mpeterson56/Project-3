@@ -8,9 +8,6 @@ function StudentLogin(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [loginStudent, { error }] = useMutation(LOGIN_STUDENT);
 
-
-  // update state based on form input changes
-
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -24,7 +21,6 @@ function StudentLogin(props) {
     }
   };
 
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormState({
@@ -32,17 +28,6 @@ function StudentLogin(props) {
       [name]: value,
     });
   };
-
-
-    // clear form values
-    setFormState({
-      email: '',
-      password: '',
-    });
-
-
-  
-
 
   return (
     <div>
