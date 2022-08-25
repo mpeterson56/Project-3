@@ -5,7 +5,7 @@ import { ADD_ASSIGNMENT } from '../../utils/mutations'
 import { QUERY_ASSIGNMENTS, QUERY_ME_STUDENT } from '../../utils/queries';
 
 const AssignmentForm = () => {
-  const [assignmentText, setText] = useState('');
+  const [description, setText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
 
   const [addAssignment, { error }] = useMutation(ADD_ASSIGNMENT, {
@@ -14,10 +14,10 @@ const AssignmentForm = () => {
         // could potentially not exist yet, so wrap in a try/catch
       try {
         // update me array's cache
-        const { me } = cache.readQuery({ query: QUERY_ME_STUDENT });
+        const { me_Student } = cache.readQuery({ query: QUERY_ME_STUDENT });
         cache.writeQuery({
           query: QUERY_ME_STUDENT,
-          data: { me: { ...me, assignment: [...me.assignment, addAssignment] } },
+          data: { me_Student: { ...me_Student, assignment: [...me_Student.assignment, addAssignment] } },
         });
       } catch (e) {
         console.warn("First Assignment insertion by user!")
@@ -46,7 +46,7 @@ const AssignmentForm = () => {
 
     try {
       await addAssignment({
-        variables: { assignmentText },
+        variables: { description },
       });
 
       // clear form value
@@ -70,7 +70,7 @@ const AssignmentForm = () => {
       >
         <textarea
           placeholder="New Assignments"
-          value={assignmentText}
+          value={description}
           onChange={handleChange}
         ></textarea>
         <button type="submit">
