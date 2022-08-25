@@ -53,8 +53,8 @@ mutation addTutor($tutorname: String!, $password: String!, $email: String!) {
 `;
 
 export const ADD_ASSIGNMENT = gql`
-mutation addAssignment($assignmentText: String!) {
-    addAssignment(assignmentText: $assignmentText) {
+mutation addAssignment($description: String!) {
+    addAssignment(description: $assignmentText) {
       _id
       description
       askPrice
