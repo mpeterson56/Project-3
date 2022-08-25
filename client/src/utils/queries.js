@@ -86,6 +86,7 @@ export const QUERY_ASSIGNMENTS = gql`
     assignments(username: $username) {
         
       _id
+      description
       askPrice
       username
       bids {
@@ -108,7 +109,7 @@ export const QUERY_ASSIGNMENT = gql`
   query assignment($id: ID!) {
     assignment(_id: $id) {
       _id
-      assignmentText
+      description
       username
     }
   }
