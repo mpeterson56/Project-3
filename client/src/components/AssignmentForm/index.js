@@ -5,7 +5,11 @@ import { ADD_ASSIGNMENT } from "../../utils/mutations";
 import { QUERY_ASSIGNMENTS, QUERY_ME_STUDENT } from "../../utils/queries";
 
 const AssignmentForm = () => {
-  const [description, setText] = useState("");
+  const [assignment, setText] = useState({
+    description: "",
+    subject: "",
+    askPrice: "",
+  });
   const [characterCount, setCharacterCount] = useState(0);
 
   const [addAssignment, { error }] = useMutation(ADD_ASSIGNMENT, {
@@ -37,11 +41,19 @@ const AssignmentForm = () => {
   });
 
   // update state based on form input changes
+  // const handleChange = (event) => {
+  //   if (event.target.value.length <= 280) {
+  //     setText(event.target.value);
+  //     setCharacterCount(event.target.value.length);
+  //   }
+  // };
+
   const handleChange = (event) => {
-    if (event.target.value.length <= 280) {
-      setText(event.target.value);
-      setCharacterCount(event.target.value.length);
-    }
+    const { name, value } = event.target;
+    setText({
+      ...assignment,
+      [name]: value,
+    });
   };
 
   // submit form
@@ -50,7 +62,11 @@ const AssignmentForm = () => {
 
     try {
       await addAssignment({
-        variables: { description },
+        variables: {
+          description: assignment.description,
+          subject: assignment.subject,
+          askPrice: assignment.askPrice,
+        },
       });
 
       // clear form value
@@ -63,32 +79,39 @@ const AssignmentForm = () => {
 
   return (
     <div class="row">
-      
-      <form class="col s12 indigo darken white-text" onSubmit={handleFormSubmit}>
-      
+      <form
+        class="col s12 indigo darken white-text"
+        onSubmit={handleFormSubmit}
+      >
         <div class="input-field col s9">
-        
-          <textarea id="icon_prefix2" class="materialize-textarea white-text"  placeholder="Subject"></textarea>
-         
-        </div>
-      
-
-      
-        <div class="input-field col s3">
-          <textarea id="price" class="materialize-textarea white-text" type="text" placeholder="Price"></textarea>
-       
-        </div>
-      
-
-      <div class="input-field col s12"> 
           <textarea
-            class="input-field col s10"
-            placeholder="Description"
-            id="description" class="materialize-textarea white-text"
-            value={description}
+            id="icon_prefix2"
+            class="materialize-textarea white-text"
+            name={assignment.subject}
+            placeholder="Subject"
             onChange={handleChange}
           ></textarea>
-          
+        </div>
+
+        <div class="input-field col s3">
+          <textarea
+            id="price"
+            class="materialize-textarea white-text"
+            type="text"
+            name={assignment.askPrice}
+            placeholder="Price"
+            onChange={handleChange}
+          ></textarea>
+        </div>
+
+        <div class="input-field col s12">
+          <textarea
+            class="input-field col s10 materialize-textarea white-text"
+            placeholder="Description"
+            id="description"
+            name={assignment.description}
+            onChange={handleChange}
+          ></textarea>
         </div>
         <div class="col s12">
           <p>
@@ -107,12 +130,7 @@ const AssignmentForm = () => {
         </div>
       </form>
     </div>
-
-    
   );
 };
 
 export default AssignmentForm;
-
-
-{/* */}

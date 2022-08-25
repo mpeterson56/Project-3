@@ -82,12 +82,13 @@ export const QUERY_ME_TUTOR = gql`
 `;
 
 export const QUERY_ASSIGNMENTS = gql`
-  query assignments($username: String) {
+  query assignments($username: String!) {
     assignments(username: $username) {
         
       _id
       description
       askPrice
+      subject
       username
       bids {
         _id
@@ -111,6 +112,8 @@ export const QUERY_ASSIGNMENT = gql`
       _id
       description
       username
+      askPrice
+      subject
     }
   }
 `;

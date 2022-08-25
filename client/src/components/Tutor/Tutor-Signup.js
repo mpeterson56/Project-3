@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
 import { ADD_TUTOR } from "../../utils/mutations";
 
 function TutorSignup(props) {
-  const [formState, setFormState] = useState({
-    email: "",
-    password: "",
-  });
+  const [formState, setFormState] = useState({ email: "", password: "" });
   const [addTutor] = useMutation(ADD_TUTOR);
 
   const handleFormSubmit = async (event) => {
@@ -22,6 +18,7 @@ function TutorSignup(props) {
     });
     const token = mutationResponse.data.addTutor.token;
     Auth.login(token);
+    console.log("token", token)
   };
 
   const handleChange = (event) => {
@@ -37,15 +34,15 @@ function TutorSignup(props) {
       <h4 class="green-text text-darken-4">Tutor Signup</h4>
       <form class="col s4 green darken-4" onSubmit={handleFormSubmit}>
         <div>
-          <label class="white-text" htmlFor="firstName">
-            Username:
+          <label class="white-text" htmlFor="tutorName">
+            Tutorname:
           </label>
           <input
             class="white-text"
-            placeholder="username"
-            name="username"
+            placeholder="tutorname"
+            name="tutorname"
             type="text"
-            id="username"
+            id="tutorname"
             onChange={handleChange}
           />
         </div>

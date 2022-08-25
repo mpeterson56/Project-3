@@ -13,7 +13,7 @@ const StudentProfile = (props) => {
         variables: { username: userParam },
     });
 
-    const user = data?.me || data?.user || {};
+    const user = data?.me_Student || data?.student || {};
 
     // navigate to personal profile page if username is yours
     if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
