@@ -8,6 +8,12 @@ function Nav() {
       return (
         <ul>
           <li>
+            <span>
+            <Link to="/tutorProfile"> Tutor's Profile</Link> /
+            <Link to="/studentProfile"> Student's Profile</Link>
+            </span>
+          </li>
+          <li>
             <a href="/" onClick={() => Auth.logout()}>
               Logout
             </a>
@@ -40,7 +46,9 @@ function Nav() {
   return (
     <header>
       <h1>
+        <Link to='/'>
         Tutor Coin
+        </Link>
       </h1>
       <nav>
         {showNavigation()}
