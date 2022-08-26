@@ -97,14 +97,15 @@ const resolvers = {
     },
 
     addAssignment: async (parent, args, context) => {
-      if (context.student) {
+      console.log(context.user)
+      if (context.user) {
         const assignment = await Assignment.create({
           ...args,
-          username: context.student.username,
+          username: context.user.username,
         });
 
         await Student.findByIdAndUpdate(
-          { _id: context.student._id },
+          { _id: context.user._id },
           { $push: { assignments: assignment._id } },
           { new: true }
         );
