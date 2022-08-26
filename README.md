@@ -51,16 +51,19 @@ Clone the repo to your local machine, and then install the dependencies with npm
 - Include user communication on app 
 
 ## Presentation Link
-
+https://docs.google.com/presentation/d/1V19s6clrn8KaRnX-QMSdG8X2AKKs_ZRz-QsJxjn-VM8/edit?usp=sharing
 
 ## Heroku Deployed
 
 
 ## Demo Video Link
+https://drive.google.com/file/d/1H7J2jvk1cwdFA5ySXfhYoRXdC2zGMnWa/view
+
+![demo](./gif/demo.gif)
 
 
 ## Github Repository
-
+https://github.com/mpeterson56/Tutor-Coin
 
 ## Made with ❤️️  by Macy Mannix, Ghulam Zaka, Jordan Thomas, Diego Rivera and Michael Peterson
 Mentored by UC Davis Full Stack Web Developer Bootcamp
