@@ -54,7 +54,7 @@ Clone the repo to your local machine, and then install the dependencies with npm
 https://docs.google.com/presentation/d/1V19s6clrn8KaRnX-QMSdG8X2AKKs_ZRz-QsJxjn-VM8/edit?usp=sharing
 
 ## Heroku Deployed
-
+https://tutor-coin.herokuapp.com/
 
 ## Demo Video Link
 https://drive.google.com/file/d/1H7J2jvk1cwdFA5ySXfhYoRXdC2zGMnWa/view
