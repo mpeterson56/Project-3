@@ -60,7 +60,7 @@ mutation addAssignment($description: String!, $subject: String!, $askPrice: Stri
       subject
       askPrice
       username
-      
+      createdAt
     }
   }
 `

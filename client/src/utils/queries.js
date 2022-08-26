@@ -47,6 +47,9 @@ export const QUERY_ME_STUDENT = gql`
             assignment {
                 _id
                 askPrice
+                subject
+                description
+                createdAt
                 username
                 commentCount
                 comments{
@@ -75,7 +78,7 @@ export const QUERY_ME_TUTOR = gql`
                 _id
                 priceOffer
                 tutorname
-                assignment
+                assignments
             }
         }
     }
@@ -83,12 +86,12 @@ export const QUERY_ME_TUTOR = gql`
 
 export const QUERY_ASSIGNMENTS = gql`
   query assignments($username: String!) {
-    assignments(username: $username) {
-        
+    assignments(username: $username) {  
       _id
       description
       askPrice
       subject
+      createdAt
       username
       bids {
         _id
