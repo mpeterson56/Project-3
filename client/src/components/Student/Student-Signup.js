@@ -9,7 +9,6 @@ function StudentSignup(props) {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState)
     const mutationResponse = await addStudent({
       variables: {
         username: formState.username,
@@ -18,7 +17,6 @@ function StudentSignup(props) {
       },
     });
     const token = mutationResponse.data.addStudent.token;
-    window.alert(token)
     Auth.login(token);
     // console.log("token", token);
   };
@@ -29,7 +27,6 @@ function StudentSignup(props) {
       ...formState,
       [name]: value,
     });
-    console.log(formState);
   };
 
   return (
