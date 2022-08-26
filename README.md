@@ -10,7 +10,7 @@ Showcase collaborative skills and coding abilities, especially in the context of
 - [Installation Instructions](#installation-instructions)
 - [Future Development](#future-development)
 - [Presentation Link](#presentation-link) 
-- [Heroku Deployed](#Heroku-deployed)
+- [Heroku Deployed](#heroku-deployed)
 - [Demo Video Link](#demo-video-link)
 - [Github Repository](#github-repository)
 
