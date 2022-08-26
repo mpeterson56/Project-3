@@ -1,71 +1,70 @@
-# Getting Started with Create React App
+# Tutor Coin
+
+## Purpose
+Showcase collaborative skills and coding abilities, especially in the context of a scalable, user-focused MERN app.
+
+## Table of Contents
+- [Purpose](#purpose) 
+- [Description](#description) 
+- [Process](#process)
+- [Installation Instructions](#installation-instructions)
+- [Future Development](#future-development)
+- [Presentation Link](#presentation-link) 
+- [Heroku Deployed](#heroku-deployed)
+- [Demo Video Link](#demo-video-link)
+- [Github Repository](#github-repository)
+
+## Description
+As a busy student with challenging assignments
+When I need help with an assignment 
+Then I can make a money offer to a tutor to help me to get the job done
+When student goes to post a job they can offer a price 
+Then tutors can view the job posting and email the student to accept offer
 
 
+## ![create](./gif/create.png)
+
+## Process 
+Technology used: 
+- MongoDB
+- GraphQL
+- Express
+- React
+- Node.js
+- Queries and Mutations
+- JWT
+- HTML, CSS, Javascript
+- Materialize
+
+Contributions:
+- Jordan, Front End
+- Michael, Back End
+- Ghulam, Back End
+- Diego, Back End
+- Macy, Front End
+
+## Installation Instructions
+Clone the repo to your local machine, and then install the dependencies with npm install. Once fully installed, you can run the app from the root directory via the package.json script or using npm commands. This will pull up the website on Localhost 3000. Or you can click the Heroku Deployed Link instead. 
+
+## Future Development 
+- Include Stripe or payment platform
+- Include user communication on app 
+
+## Presentation Link
+https://docs.google.com/presentation/d/1V19s6clrn8KaRnX-QMSdG8X2AKKs_ZRz-QsJxjn-VM8/edit?usp=sharing
+
+## Heroku Deployed
+
+
+## Demo Video Link
+https://drive.google.com/file/d/1H7J2jvk1cwdFA5ySXfhYoRXdC2zGMnWa/view
+
+![demo](./gif/demo.gif)
+
+
+## Github Repository
+https://github.com/mpeterson56/Tutor-Coin
+
+## Made with ❤️️  by Macy Mannix, Ghulam Zaka, Jordan Thomas, Diego Rivera and Michael Peterson
+Mentored by UC Davis Full Stack Web Developer Bootcamp
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
