@@ -14,6 +14,7 @@ const AssignmentForm = () => {
 
   const [addAssignment, { error }] = useMutation(ADD_ASSIGNMENT, {
     update(cache, { data: { addAssignment } }) {
+
       // could potentially not exist yet, so wrap in a try/catch
       try {
         // update me array's cache
@@ -23,7 +24,7 @@ const AssignmentForm = () => {
           data: {
             me_Student: {
               ...me_Student,
-              assignment: [...me_Student.assignment, addAssignment],
+              assignments: [...me_Student.assignments, addAssignment],
             },
           },
         });
@@ -31,12 +32,24 @@ const AssignmentForm = () => {
         console.warn("First Assignment insertion by user!");
       }
 
+      // const { me_Student } = cache.readQuery({ query: QUERY_ME_STUDENT });
+      // cache.writeQuery({
+      //   query: QUERY_ME_STUDENT,
+      //     data: {
+      //       me_Student: {
+      //         ...me_Student,
+      //         assignments: [...me_Student.assignments, addAssignment],
+      //       },
+      //     },
+      //   });
+
+
       // update thought array's cache
-      const { assignment } = cache.readQuery({ query: QUERY_ASSIGNMENTS });
-      cache.writeQuery({
-        query: QUERY_ASSIGNMENTS,
-        data: { assignment: [addAssignment, ...assignment] },
-      });
+      // const { assignment } = cache.readQuery({ query: QUERY_ASSIGNMENTS, variables: {username: 'tester6' }});
+      // cache.writeQuery({
+      //   query: QUERY_ASSIGNMENTS,
+      //   data: { assignments: [addAssignment, ...assignment] },
+      // });
     },
   });
 
@@ -54,6 +67,7 @@ const AssignmentForm = () => {
       ...assignment,
       [name]: value,
     });
+    console.log(assignment)
   };
 
   // submit form
@@ -87,7 +101,7 @@ const AssignmentForm = () => {
           <textarea
             id="icon_prefix2"
             class="materialize-textarea white-text"
-            name={assignment.subject}
+            name='subject'
             placeholder="Subject"
             onChange={handleChange}
           ></textarea>
@@ -98,7 +112,7 @@ const AssignmentForm = () => {
             id="price"
             class="materialize-textarea white-text"
             type="text"
-            name={assignment.askPrice}
+            name='askPrice'
             placeholder="Price"
             onChange={handleChange}
           ></textarea>
@@ -109,7 +123,7 @@ const AssignmentForm = () => {
             class="input-field col s10 materialize-textarea white-text"
             placeholder="Description"
             id="description"
-            name={assignment.description}
+            name='description'
             onChange={handleChange}
           ></textarea>
         </div>
