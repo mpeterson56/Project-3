@@ -4,11 +4,12 @@ import Auth from "../../utils/auth";
 import { ADD_STUDENT } from "../../utils/mutations";
 
 function StudentSignup(props) {
-  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [formState, setFormState] = useState({ username: "", email: "", password: "" });
   const [addStudent] = useMutation(ADD_STUDENT);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    console.log(formState)
     const mutationResponse = await addStudent({
       variables: {
         username: formState.username,
@@ -17,8 +18,9 @@ function StudentSignup(props) {
       },
     });
     const token = mutationResponse.data.addStudent.token;
+    window.alert(token)
     Auth.login(token);
-    console.log("token", token);
+    // console.log("token", token);
   };
 
   const handleChange = (event) => {
@@ -27,6 +29,7 @@ function StudentSignup(props) {
       ...formState,
       [name]: value,
     });
+    console.log(formState);
   };
 
   return (
