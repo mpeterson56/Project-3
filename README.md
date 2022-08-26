@@ -22,7 +22,7 @@ When student goes to post a job they can offer a price
 Then tutors can view the job posting and email the student to accept offer
 
 
-## ![create](./gif/create.png)
+## ![create](./create.png)
 
 ## Process 
 Technology used: 
@@ -59,7 +59,7 @@ https://docs.google.com/presentation/d/1V19s6clrn8KaRnX-QMSdG8X2AKKs_ZRz-QsJxjn-
 ## Demo Video Link
 https://drive.google.com/file/d/1H7J2jvk1cwdFA5ySXfhYoRXdC2zGMnWa/view
 
-![demo](./gif/demo.gif)
+![demo](./demo.gif)
 
 
 ## Github Repository
